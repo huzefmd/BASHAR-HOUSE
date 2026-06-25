@@ -1,0 +1,278 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Bashar Art Houz Design System - Luxurious Black & Gold Theme */
+
+@layer base {
+  :root {
+    /* Black & Gold Palette */
+    --background: 0 0% 0%;
+    /* Pure Black */
+    --foreground: 46 90% 60%;
+    /* Gold */
+
+    --card: 0 0% 0%;
+    /* Black */
+    --card-foreground: 46 90% 60%;
+    /* Gold */
+
+    --popover: 0 0% 0%;
+    /* Black */
+    --popover-foreground: 46 90% 60%;
+    /* Gold */
+
+    --primary: 46 90% 60%;
+    /* Gold */
+    --primary-foreground: 0 0% 0%;
+    /* Black */
+
+    --secondary: 46 80% 70%;
+    /* Lighter Gold */
+    --secondary-foreground: 0 0% 0%;
+    /* Black */
+
+    --muted: 0 0% 10%;
+    /* Deep Black */
+    --muted-foreground: 46 60% 70%;
+    /* Muted Gold */
+
+    --accent: 46 90% 60%;
+    /* Gold */
+    --accent-foreground: 0 0% 0%;
+    /* Black */
+
+    --destructive: 0 84.2% 60.2%;
+    /* Keep red for alerts */
+    --destructive-foreground: 46 90% 60%;
+    /* Gold on red */
+
+    --border: 46 40% 30%;
+    /* Subtle Dark Gold */
+    --input: 46 40% 30%;
+    --ring: 46 90% 60%;
+    /* Gold glow */
+
+    --radius: 0.5rem;
+
+    /* Custom Brand Variables */
+    --gold: 46 90% 60%;
+    --gold-light: 46 80% 70%;
+    --gold-dark: 46 60% 40%;
+    --black: 0 0% 0%;
+    --charcoal: 0 0% 10%;
+    --cream: 46 80% 85%;
+    /* Pale gold/cream */
+    --warm-grey: 0 0% 15%;
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 0%;
+    /* Black */
+    --sidebar-foreground: 46 90% 60%;
+    /* Gold */
+    --sidebar-primary: 46 90% 60%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 10%;
+    /* Dark Black */
+    --sidebar-accent-foreground: 46 80% 70%;
+    /* Lighter Gold */
+    --sidebar-border: 46 40% 30%;
+    --sidebar-ring: 46 90% 60%;
+  }
+
+  .dark {
+    /* Keep dark mode consistent with black & gold */
+    --background: 0 0% 0%;
+    --foreground: 46 90% 60%;
+
+    --card: 0 0% 0%;
+    --card-foreground: 46 90% 60%;
+
+    --popover: 0 0% 0%;
+    --popover-foreground: 46 90% 60%;
+
+    --primary: 46 90% 60%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 46 80% 70%;
+    --secondary-foreground: 0 0% 0%;
+
+    --muted: 0 0% 10%;
+    --muted-foreground: 46 60% 70%;
+
+    --accent: 46 90% 60%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 46 90% 60%;
+
+    --border: 46 40% 30%;
+    --input: 46 40% 30%;
+    --ring: 46 90% 60%;
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 0%;
+    --sidebar-foreground: 46 90% 60%;
+    --sidebar-primary: 46 90% 60%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 10%;
+    --sidebar-accent-foreground: 46 80% 70%;
+    --sidebar-border: 46 40% 30%;
+    --sidebar-ring: 46 90% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-serif overflow-x-hidden;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Bashar Art Houz Design System - Luxurious Black & Brown Theme */
+
+@layer base {
+  :root {
+    /* Black & Brown Palette */
+    --background: 0 0% 0%;
+    /* Pure Black */
+    --foreground: 27 28% 42%;
+    /* #896750 as HSL approximation */
+
+    --card: 0 0% 0%;
+    /* Black */
+    --card-foreground: 27 28% 42%;
+    /* Brown */
+
+    --popover: 0 0% 0%;
+    /* Black */
+    --popover-foreground: 27 28% 42%;
+    /* Brown */
+
+    --primary: 27 28% 42%;
+    /* Brown */
+    --primary-foreground: 0 0% 0%;
+    /* Black */
+
+    --secondary: 27 28% 55%;
+    /* Slightly lighter brown variation */
+    --secondary-foreground: 0 0% 0%;
+    /* Black */
+
+    --muted: 0 0% 10%;
+    /* Deep Black */
+    --muted-foreground: 27 20% 60%;
+    /* Muted Brown */
+
+    --accent: 27 28% 42%;
+    /* Brown */
+    --accent-foreground: 0 0% 0%;
+    /* Black */
+
+    --destructive: 0 84.2% 60.2%;
+    /* Keep red for alerts */
+    --destructive-foreground: 27 28% 42%;
+    /* Brown on red */
+
+    --border: 27 20% 25%;
+    /* Darker Brown */
+    --input: 27 20% 25%;
+    --ring: 27 28% 42%;
+    /* Brown Glow */
+
+    --radius: 0.5rem;
+
+    /* Custom Brand Variables */
+    --brown: 27 28% 42%;
+    /* #896750 */
+    --brown-light: 27 28% 55%;
+    --brown-dark: 27 28% 25%;
+    --black: 0 0% 0%;
+    --charcoal: 0 0% 10%;
+    --cream: 27 25% 80%;
+    /* Light cream tone to pair with brown */
+    --warm-grey: 0 0% 15%;
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 0%;
+    /* Black */
+    --sidebar-foreground: 27 28% 42%;
+    /* Brown */
+    --sidebar-primary: 27 28% 42%;
+    /* Brown */
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 10%;
+    /* Dark Black */
+    --sidebar-accent-foreground: 27 28% 55%;
+    /* Lighter Brown */
+    --sidebar-border: 27 20% 25%;
+    /* Dark Brown */
+    --sidebar-ring: 27 28% 42%;
+  }
+
+  .dark {
+    /* Keep dark mode consistent with black & brown */
+    --background: 0 0% 0%;
+    --foreground: 27 28% 42%;
+
+    --card: 0 0% 0%;
+    --card-foreground: 27 28% 42%;
+
+    --popover: 0 0% 0%;
+    --popover-foreground: 27 28% 42%;
+
+    --primary: 27 28% 42%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 27 28% 55%;
+    --secondary-foreground: 0 0% 0%;
+
+    --muted: 0 0% 10%;
+    --muted-foreground: 27 20% 60%;
+
+    --accent: 27 28% 42%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 27 28% 42%;
+
+    --border: 27 20% 25%;
+    --input: 27 20% 25%;
+    --ring: 27 28% 42%;
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 0%;
+    --sidebar-foreground: 27 28% 42%;
+    --sidebar-primary: 27 28% 42%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 10%;
+    --sidebar-accent-foreground: 27 28% 55%;
+    --sidebar-border: 27 20% 25%;
+    --sidebar-ring: 27 28% 42%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-serif overflow-x-hidden;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
