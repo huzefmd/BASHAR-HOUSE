@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useRef } from "react";
-import { Palette, Music, Camera, PenTool, Mic, icons, Landmark, WandSparkles, PencilRuler, Sofa, Brush, } from "lucide-react";
+import { Palette, Music, Camera, PenTool, Mic, icons,Hammer, Landmark, WandSparkles, PencilRuler, Sofa, Brush, } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import AnimatedText from "@/components/AnimatedText";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -82,7 +82,7 @@ const Studio = () => {
     {
       title: "Sculpture",
       description: "A space where raw forms are shaped into timeless expressions. Discover how creativity blossoms when imagination meets material in a shared artistic spirit.",
-      icon: Mic,
+      icon: Hammer,
     }
 
   ];
