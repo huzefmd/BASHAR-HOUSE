@@ -427,11 +427,11 @@ const Gallery = () => {
                 </div>
                 <div className="flex items-center justify-center gap-4">
                   <Phone className="h-5 w-5 text-gold" />
-                  <span className="text-cream/85">Phone: +91 76988 10804</span>
+                  <span className="text-cream/85">Phone: 8147844020</span>
                 </div>
                 <div className="flex items-center justify-center gap-4">
                   <MapPin className="h-5 w-5 text-gold" />
-                  <span className="text-cream/85">Address: HBR Bangalore</span>
+                  <span className="text-cream/85">Location: HBR Bangalore</span>
                 </div>
               </div>
             </Card>

@@ -118,8 +118,11 @@ const Contact = () => {
       {/* Reservation Banner */}
       <section className="py-16 bg-neutral-900 text-center">
         <ScrollReveal direction="up">
+          <p className="text-lg text-gray-300 mb-2">
+            Entry by reservations only
+          </p>
           <p className="text-lg text-gray-300 mb-6">
-            Strictly a workspace entry by reservation only. Book your time slot:
+            Book your time slot
           </p>
           <Button
             size="lg"
@@ -143,11 +146,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-xl mb-1">Location</h3>
-                  <p className="text-gray-400">
-                    No. 208/J, HBR Layout 2nd Block, 1st Stage,
-                    <br />
-                    Bengaluru, Karnataka 560043
-                  </p>
+                  <p className="text-gray-400">HBR Bangalore</p>
                 </div>
               </div>
             </ScrollReveal>
@@ -159,7 +158,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-xl mb-1">Email</h3>
-                  <p className="text-gray-400">hello@bwxac.com</p>
+                  <p className="text-gray-400">houzofbashar@demo.com</p>
                 </div>
               </div>
             </ScrollReveal>
@@ -171,7 +170,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-xl mb-1">Call</h3>
-                  <p className="text-gray-400">+91 81478 44020</p>
+                  <p className="text-gray-400">8147844020</p>
                 </div>
               </div>
             </ScrollReveal>

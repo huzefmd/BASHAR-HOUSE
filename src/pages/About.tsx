@@ -10,7 +10,6 @@ import bodyImage1 from "@/assets/about/about1.jpg"
 import bodyImage2 from "@/assets/about/about2.jpg"
 import bodyImage3 from "@/assets/about/about3.png"
 
-import basharPortrait from "@/assets/potrait.png"
 import bookCollection from "@/assets/books.png"
 import ParallaxSlideshow from "@/components/ParallaxSlideshow";
 
@@ -262,106 +261,57 @@ const About = () => {
       </section >  */}
 
       {/* Founder Section */}
-      {/* < ParallaxSection className="py-32 px-6" image={basharPortrait} speed={0.4} > */}
       < ParallaxSection className="py-32 px-6" speed={0.4} >
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <ScrollReveal direction="left">
-              <div className="relative">
-                <motion.div
-                  className="relative overflow-hidden rounded-2xl"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <img
-                    src={basharPortrait}
-                    alt="BASHAR - Founder"
-                    className="w-full h-[700px] object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-transparent to-charcoal/30"></div>
-                  {/* <motion.div
-                    className="absolute bottom-8 left-8"
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: 0.5 }}
-                  >
-                    <AnimatedText
-                      text="B A S H A R"
-                      className="text-4xl font-serif font-bold text-cream tracking-[0.2em] mb-2"
-                      delay={0.8}
-                    />
-                    <p className="text-gold font-sans tracking-[0.1em]">F O U N D E R  &  V I S I O N A R Y</p>
-                  </motion.div> */}
-                </motion.div>
+        <div className="max-w-4xl mx-auto">
+          <ScrollReveal direction="up">
+            <div>
+              <AnimatedText
+                text="F R O M   T H E"
+                className="text-xl text-gold/80 font-sans tracking-[0.3em] mb-4"
+                delay={0.5}
+              />
+              <AnimatedText
+                text="F O U N D E R"
+                className="text-6xl font-serif font-bold text-cream mb-12 tracking-[0.1em]"
+                delay={0.8}
+                stagger={0.1}
+              />
+
+              <div className="space-y-8 text-lg text-cream/85 leading-relaxed font-light">
+                <ScrollReveal delay={1.2}>
+                  <p>
+                    I'm Shifa Sultana, the founder of Bashar Art Houz. Over the years, I have dedicated myself to honing a
+                    diverse set of passions—blending the roles of an artist, athlete, and altruist. These experiences
+                    have shaped who I am and inspired the creation of this space.
+                  </p>
+                </ScrollReveal>
+
+                <ScrollReveal delay={1.4}>
+                  <p>
+                    As an artist, I value creativity, expression, and the beauty of ideas. My athletic background has
+                    taught me discipline, resilience, and a commitment to continuous growth. And as an altruist, I
+                    believe in giving back, fostering community, and making a positive impact on those around me.
+                  </p>
+                  &nbsp;
+                </ScrollReveal>
+                <ScrollReveal delay={1.4}>
+                  By combining the transformative power of art with the benefits of
+                  athleticism and altruism, this concept not only enriches lives but also fosters a culture of
+                  creativity, well-being, community connection and over all human welfare.
+                  Bashar Art Houz with being an artistic Houz also focuses on the concept of Athleticism and
+                  Altruism. An innovative space that harmoniously blends creativity, athleticism, and altruism.
+                  Our Art Café, Art Studio, and Art Gallery serve as a vibrant hub for artists, athletes, and the
+                  community, promoting artistic vision, physical well-being, and social good. This unique concept
+                  aims to inspire individuals to express themselves artistically while also fostering a healthy
+                  lifestyle and a commitment to social causes.
+                  <span className="text-gold italic">
+                    Humanitarian commitment is fulfilled through our Qurat-Al-Ain Shifa Sultana foundation an initiative
+                    yet again by Shifa Sultana which simply stands on the fundamental principle of “The Art of giving.”
+                  </span>
+                </ScrollReveal>
               </div>
-            </ScrollReveal>
-
-            <ScrollReveal direction="right" delay={0.3}>
-              <div>
-                <AnimatedText
-                  text="F R O M   T H E"
-                  className="text-xl text-gold/80 font-sans tracking-[0.3em] mb-4"
-                  delay={0.5}
-                />
-                <AnimatedText
-                  text="F O U N D E R"
-                  className="text-6xl font-serif font-bold text-cream mb-12 tracking-[0.1em]"
-                  delay={0.8}
-                  stagger={0.1}
-                />
-
-                <div className="space-y-8 text-lg text-cream/85 leading-relaxed font-light">
-                  <ScrollReveal delay={1.2}>
-                    <p>
-                      I'm BASHAR the founder of Bashar Art Houz. Over the years, I have dedicated myself to honing a
-                      diverse set of passions—blending the roles of an artist, athlete, and altruist. These experiences
-                      have shaped who I am and inspired the creation of this space.
-                    </p>
-                  </ScrollReveal>
-
-                  <ScrollReveal delay={1.4}>
-                    <p>
-                      As an artist, I value creativity, expression, and the beauty of ideas. My athletic background has
-                      taught me discipline, resilience, and a commitment to continuous growth. And as an altruist, I
-                      believe in giving back, fostering community, and making a positive impact on those around me.
-                    </p>
-                    &nbsp;
-                  </ScrollReveal>
-                  <ScrollReveal delay={1.4}>
-                    By combining the transformative power of art with the benefits of
-                    athleticism and altruism, this concept not only enriches lives but also fosters a culture of
-                    creativity, well-being, community connection and over all human welfare.
-                    Bashar Art Houz with being an artistic Houz also focuses on the concept of Athleticism and
-                    Altruism. An innovative space that harmoniously blends creativity, athleticism, and altruism.
-                    Our Art Café, Art Studio, and Art Gallery serve as a vibrant hub for artists, athletes, and the
-                    community, promoting artistic vision, physical well-being, and social good. This unique concept
-                    aims to inspire individuals to express themselves artistically while also fostering a healthy
-                    lifestyle and a commitment to social causes.
-                    <span className="text-gold italic">
-                      Humanitarian commitment is fulfilled through our Qurat-Al-Ain Bashar foundation an initiative
-                      yet again by BASHAR which simply stands on the fundamental principle of “The Art of giving.”
-                    </span>
-                  </ScrollReveal>
-
-                  {/* Scroller text thingy  */}
-
-                  {/* <ScrollReveal delay={1.6}>
-                    <motion.div
-                      className="bg-warm-grey/30 backdrop-blur-sm p-8 rounded-xl border-l-4 border-gold"
-                      whileHover={{ x: 10 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <p className="text-cream/95 font-light italic text-xl leading-relaxed">
-                        "Bashar represents a holistic approach to nurturing the artistic spirit, physical health and human
-                        welfare of the community."
-                      </p>
-                    </motion.div>
-                  </ScrollReveal> */}
-                </div>
-              </div>
-            </ScrollReveal>
-          </div>
+            </div>
+          </ScrollReveal>
         </div>
       </ParallaxSection >
 
@@ -500,7 +450,7 @@ const About = () => {
 
               <div className="relative z-10">
                 <AnimatedText
-                  text="QURAT-AL-AIN BASHAR FOUNDATION"
+                  text="QURAT-AL-AIN SHIFA SULTANA FOUNDATION"
                   className="text-4xl font-serif font-bold text-gold mb-8 tracking-[0.1em]"
                   delay={0.3}
                   stagger={0.05}
@@ -508,8 +458,8 @@ const About = () => {
 
                 <ScrollReveal delay={0.8}>
                   <p className="text-xl text-cream/85 leading-relaxed font-light mb-8">
-                    Humanitarian commitment is fulfilled through our Qurat-Al-Ain Bashar foundation - an initiative
-                    by BASHAR which simply stands on the fundamental principle of:
+                    Humanitarian commitment is fulfilled through our Qurat-Al-Ain Shifa Sultana foundation - an initiative
+                    by Shifa Sultana which simply stands on the fundamental principle of:
                   </p>
                 </ScrollReveal>
 

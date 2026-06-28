@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import heroImage from "@/assets/about/about-hero.jpg";
 import homeimage from "@/assets/home/home-main.png";
 import studioImage from "@/assets/studio/studio-main.png"
@@ -31,6 +31,10 @@ const HorizontalNavigation: React.FC<HorizontalNavigationProps> = ({
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const isActiveRoute = (href: string) =>
+    href === "/" ? location.pathname === "/" : location.pathname === href;
 
   const navigationItems: NavigationItem[] = [
     {
@@ -97,7 +101,9 @@ const HorizontalNavigation: React.FC<HorizontalNavigationProps> = ({
 
   // Navigate using useNavigate and close menu
   const handleItemClick = (href: string) => {
+    if (isExpanded) onToggle();
     navigate(href);
+    window.scrollTo(0, 0);
   };
 
   // Framer Motion variants for staggered letters hover effect
@@ -150,17 +156,26 @@ const HorizontalNavigation: React.FC<HorizontalNavigationProps> = ({
       {/* Bottom nav bar — always fixed in place */}
       <div className="fixed bottom-0 left-0 right-0 z-40 h-20 bg-background/90 backdrop-blur-md border-t border-border/50">
         <div className="h-full flex items-center justify-evenly select-none">
-          {navigationItems.map((item) => (
-            <div
-              key={item.id}
-              className="text-center cursor-pointer"
-              onClick={() => handleItemClick(item.href)}
-            >
-              <div className="text-foreground text-sm tracking-widest mb-1">
-                {renderStaggeredText(item.title)}
+          {navigationItems.map((item) => {
+            const isActive = isActiveRoute(item.href);
+            return (
+              <div
+                key={item.id}
+                className="text-center cursor-pointer"
+                onClick={() => handleItemClick(item.href)}
+              >
+                <div
+                  className={`text-sm tracking-widest mb-1 transition-colors duration-300 ${
+                    isActive
+                      ? "text-primary font-semibold border-b-2 border-primary pb-0.5"
+                      : "text-foreground"
+                  }`}
+                >
+                  {renderStaggeredText(item.title)}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 
@@ -197,24 +212,34 @@ const HorizontalNavigation: React.FC<HorizontalNavigationProps> = ({
             ref={containerRef}
           >
             <motion.div className="flex gap-8" style={{ x: smoothX }}>
-              {navigationItems.map((item) => (
+              {navigationItems.map((item) => {
+                const isActive = isActiveRoute(item.href);
+                return (
                 <div
                   key={item.id}
-                  className="flex-none w-[300px] group cursor-pointer transform transition-all duration-500 hover:scale-105"
+                  className={`flex-none w-[300px] group cursor-pointer transform transition-all duration-500 hover:scale-105 ${
+                    isActive ? "ring-2 ring-primary ring-offset-2 ring-offset-background rounded-lg p-1" : ""
+                  }`}
                   onClick={() => handleItemClick(item.href)}
                   onMouseEnter={() => setHoveredItem(item.id)}
                   onMouseLeave={() => setHoveredItem(null)}
                 >
                   {/* Number and Title */}
                   <div className="text-center mb-4">
-                    <div className="text-2xl font-light text-foreground tracking-wider mb-2 group-hover:text-primary transition-colors duration-300">
+                    <div
+                      className={`text-2xl font-light tracking-wider mb-2 transition-colors duration-300 ${
+                        isActive || hoveredItem === item.id
+                          ? "text-primary"
+                          : "text-foreground"
+                      }`}
+                    >
                       {item.number}
                     </div>
-                    <div className="text-sm text-foreground tracking-widest overflow-hidden">
+                    <div className="text-sm tracking-widest overflow-hidden">
                       <span
                         className={`inline-block transition-transform duration-500 ${
                           hoveredItem === item.id ? "translate-x-2" : ""
-                        }`}
+                        } ${isActive ? "text-primary font-semibold" : "text-foreground"}`}
                       >
                         {item.title}
                       </span>
@@ -243,7 +268,8 @@ const HorizontalNavigation: React.FC<HorizontalNavigationProps> = ({
                     </div>
                   </div>
                 </div>
-              ))}
+                );
+              })}
             </motion.div>
           </div>
 
