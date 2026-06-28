@@ -1,13 +1,14 @@
 import HeroSection from '@/components/HeroSection';
+import { useNavigationMenu } from '@/App';
 
 const Index = () => {
+  const { toggleMenu } = useNavigationMenu();
+
   return (
     <div className="min-h-screen bg-background">      
       <main>
         <div className="min-h-screen">
-          <HeroSection onMenuClick={function (): void {
-            throw new Error('Function not implemented.');
-          } } />
+          <HeroSection onMenuClick={toggleMenu} />
         </div>
       </main>
     </div>

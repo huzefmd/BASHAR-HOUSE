@@ -146,11 +146,9 @@ const HorizontalNavigation: React.FC<HorizontalNavigationProps> = ({
   );
 
   return (
-    <div
-      className={`fixed bottom-0 left-0 right-0 z-40 transition-all duration-700 ease-in-out ${isExpanded ? "h-[80vh] bg-background shadow-xl" : "h-20 bg-background/90 backdrop-blur-md"
-        }`}
-    >
-      {!isExpanded ? (
+    <>
+      {/* Bottom nav bar — always fixed in place */}
+      <div className="fixed bottom-0 left-0 right-0 z-40 h-20 bg-background/90 backdrop-blur-md border-t border-border/50">
         <div className="h-full flex items-center justify-evenly select-none">
           {navigationItems.map((item) => (
             <div
@@ -164,7 +162,14 @@ const HorizontalNavigation: React.FC<HorizontalNavigationProps> = ({
             </div>
           ))}
         </div>
-      ) : (
+      </div>
+
+      {/* Expanded menu overlay */}
+      <div
+        className={`fixed inset-x-0 bottom-20 z-50 bg-background shadow-xl transition-all duration-700 ease-in-out overflow-hidden ${
+          isExpanded ? "h-[calc(80vh-5rem)] opacity-100" : "h-0 opacity-0 pointer-events-none"
+        }`}
+      >
         <div className="h-full flex flex-col">
           {/* Header */}
           <div className="flex items-center justify-between px-6 py-4 border-b border-border">
@@ -174,10 +179,15 @@ const HorizontalNavigation: React.FC<HorizontalNavigationProps> = ({
             >
               CLOSE
             </button>
-            <div className="text-foreground font-light tracking-widest text-lg">BASHAR ART HOUZ</div>
-            <div className="text-foreground text-sm tracking-widest hover:text-primary transition-colors duration-300 cursor-pointer">
-              CONTACTS
+            <div className="text-foreground font-light tracking-widest text-lg">
+              BASHAR ART HOUZ
             </div>
+            <button
+              onClick={() => handleItemClick("/contact")}
+              className="text-foreground text-sm tracking-widest hover:text-primary transition-colors duration-300"
+            >
+              CONTACTS
+            </button>
           </div>
 
           {/* Horizontal Navigation */}
@@ -202,8 +212,9 @@ const HorizontalNavigation: React.FC<HorizontalNavigationProps> = ({
                     </div>
                     <div className="text-sm text-foreground tracking-widest overflow-hidden">
                       <span
-                        className={`inline-block transition-transform duration-500 ${hoveredItem === item.id ? "translate-x-2" : ""
-                          }`}
+                        className={`inline-block transition-transform duration-500 ${
+                          hoveredItem === item.id ? "translate-x-2" : ""
+                        }`}
                       >
                         {item.title}
                       </span>
@@ -215,12 +226,14 @@ const HorizontalNavigation: React.FC<HorizontalNavigationProps> = ({
                     <img
                       src={item.image}
                       alt={item.title}
-                      className={`w-full h-full object-cover transition-all duration-700 ${hoveredItem === item.id ? "scale-110 brightness-110" : ""
-                        }`}
+                      className={`w-full h-full object-cover transition-all duration-700 ${
+                        hoveredItem === item.id ? "scale-110 brightness-110" : ""
+                      }`}
                     />
                     <div
-                      className={`absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent transition-opacity duration-500 ${hoveredItem === item.id ? "opacity-100" : "opacity-0"
-                        }`}
+                      className={`absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent transition-opacity duration-500 ${
+                        hoveredItem === item.id ? "opacity-100" : "opacity-0"
+                      }`}
                     >
                       <div className="absolute bottom-4 left-4 right-4">
                         <div className="text-foreground text-xs tracking-widest opacity-90">
@@ -250,8 +263,8 @@ const HorizontalNavigation: React.FC<HorizontalNavigationProps> = ({
             </div>
           </div>
         </div>
-      )}
-    </div>
+      </div>
+    </>
   );
 };
 
