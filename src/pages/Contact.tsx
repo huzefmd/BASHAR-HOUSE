@@ -8,7 +8,14 @@ import heroImage from "@/assets/about/about-hero.jpg";
 import { MapPin, Mail, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+import contactImg1 from "@/assets/contact/wall-1.jpg";
+import contactImg2 from "@/assets/contact/wall-2.jpg";
+import contactImg3 from "@/assets/contact/wall-3.jpg";
+import contactImg4 from "@/assets/contact/workstation-1.png";
+import contactImg5 from "@/assets/contact/workstation-2.png";
+import contactImg6 from "@/assets/contact/main-picture.png";
 
+const INSTAGRAM_URL = "";
 
 const Contact = () => {
   const ref = useRef(null);
@@ -95,18 +102,42 @@ const Contact = () => {
       {/* Gallery Grid Section */}
       <section className="py-20 px-6 md:px-20 bg-neutral-900">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-gold mb-10 text-center">
+          <h2 className="text-3xl font-bold text-gold mb-6 text-center">
             Gallery Showcase
           </h2>
+
+          <div className="flex justify-center mb-10">
+            <a
+              href={INSTAGRAM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gold hover:text-gold-light transition-colors underline"
+            >
+              Instagram
+            </a>
+          </div>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {Array.from({ length: 6 }).map((_, i) => (
+
+            {[
+              { src: contactImg1, alt: "Wall artwork 1" },
+              { src: contactImg2, alt: "Wall artwork 2" },
+              { src: contactImg3, alt: "Wall artwork 3" },
+              { src: contactImg4, alt: "Workstation artwork 1" },
+              { src: contactImg5, alt: "Workstation artwork 2" },
+              { src: contactImg6, alt: "Main artwork" },
+            ].map((image, i) => (
               <Card
                 key={i}
                 className="overflow-hidden bg-neutral-800 border border-neutral-700 rounded-2xl"
               >
                 <CardContent className="p-0">
-                  <div className="w-full h-60 bg-neutral-700 flex items-center justify-center text-gray-400">
-                    Image {i + 1}
+                  <div className="relative w-full aspect-[4/3] bg-neutral-700">
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      className="absolute inset-0 w-full h-full object-contain"
+                    />
                   </div>
                 </CardContent>
               </Card>
